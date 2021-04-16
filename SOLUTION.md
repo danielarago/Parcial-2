@@ -2,9 +2,10 @@
 
 ## II. Diseñando
 
-El diseño del método `summarize` en la clase `Project`:
+El diseño propuesto para el método `summarize` en la clase `Project`:
 
-    ```
+    
+
         /**
         * Present a summary of the duration of a project.
         * 
@@ -13,9 +14,12 @@ El diseño del método `summarize` en la clase `Project`:
         public String summarize(){
 
         }
-    ```
 
-## I. Conceptos
+
+
+## III. Extiendiendo
+
+## IV. Conceptos
 
 1. ¿Cuáles son las acciones los tres momentos importantes de las excepciones? ¿Cuál es el objetivo de cada una? ¿Cómo se implementa en Java cada acción?
 
@@ -43,3 +47,5 @@ La sobre-escritura de métodos es lo que sucede cuando en una clase se hereda un
 
 Para evitar que se sobre-escriba un método este tendría que ser privado.
 
+
+## V. Bono
