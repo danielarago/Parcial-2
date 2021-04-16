@@ -67,10 +67,12 @@ Especificación métodos adicionales identificados:
         public Duration getDurationInProject(){
             
         }
-
     
 
 ## III. Extiendiendo
+
+Cambios propuestos al diagrama de clases general:
+
 
 ## IV. Conceptos
 
