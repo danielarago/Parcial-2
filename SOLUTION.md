@@ -1,5 +1,12 @@
 # Solución parcial corte 2
 
+## I. Implementación
+
+Evidencia de funcionamiento de las pruebas en `ProjectTest`:
+
+![image](https://user-images.githubusercontent.com/78309222/115090553-c9c32280-9eda-11eb-92d0-5f845369548f.png)
+
+
 ## II. Diseñando
 
 El diseño propuesto para el método `summarize` en la clase `Project`:
