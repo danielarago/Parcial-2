@@ -26,6 +26,9 @@ Diagrama de secuencia:
 
 ![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/summarize()%20Diagrama%20de%20secuencia.png)
 
+Diagrama de clases actualizado: 
+
+![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/SabanaResearch.png)
 
 ## III. Extiendiendo
 
