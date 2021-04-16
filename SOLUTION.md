@@ -73,6 +73,7 @@ Especificación métodos adicionales identificados:
 
 Cambios propuestos al diagrama de clases general:
 
+![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/SabanaResearchNew.png)
 
 ## IV. Conceptos
 
