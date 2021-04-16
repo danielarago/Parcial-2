@@ -9,9 +9,7 @@ Evidencia de funcionamiento de las pruebas en `ProjectTest`:
 
 ## II. Diseñando
 
-El diseño propuesto para el método `summarize` en la clase `Project`:
-
-    
+El diseño propuesto para el método `summarize` en la clase `Project`. Primero se realiza la especificación:
 
         /**
         * Present a summary of the duration of a project.
@@ -29,6 +27,48 @@ Diagrama de secuencia:
 Diagrama de clases actualizado: 
 
 ![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/SabanaResearch.png)
+
+Especificación métodos adicionales identificados:
+    ```
+
+        /**
+        * Gets the summary of the project through ExecutiveSynthesizer.
+        * 
+        * @return String, goal and duration of project
+        **/
+        public String getProjectSummary(){
+
+        }
+
+    
+        /**
+        * Gets the summary of all the students through StudentSynthesizer.
+        * 
+        * @return String, names and durations in project of all students involved
+        **/
+        public String getStudentsSummary(){
+
+        }
+
+        /**
+        * Gets the summary of each student through StudentSynthesizer, with their name and duration in String form.
+        * 
+        * @return String, name and duration in project of student
+        **/
+        public String getStudentSummary(){
+            s
+        }
+
+        /**
+        * Gets the duration of a student in a specific project.
+        * 
+        * @return Duration, time the student spent in that project.
+        **/
+        public Duration getDurationInProject(){
+            
+        }
+
+    
 
 ## III. Extiendiendo
 
