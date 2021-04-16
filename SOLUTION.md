@@ -1,5 +1,20 @@
 # Solución parcial corte 2
 
+## II. Diseñando
+
+El diseño del método `summarize` en la clase `Project`:
+
+    ```
+        /**
+        * Present a summary of the duration of a project.
+        * 
+        * @return String, a list with the summary of the duration of the project provided by ExecutiveSynthesizer and the summary of each student provided by StudentSynthesizer.
+        **/
+        public String summarize(){
+
+        }
+    ```
+
 ## I. Conceptos
 
 1. ¿Cuáles son las acciones los tres momentos importantes de las excepciones? ¿Cuál es el objetivo de cada una? ¿Cómo se implementa en Java cada acción?
