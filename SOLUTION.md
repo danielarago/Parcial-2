@@ -16,12 +16,15 @@ El diseño propuesto para el método `summarize` en la clase `Project`:
         /**
         * Present a summary of the duration of a project.
         * 
-        * @return String, a list with the summary of the duration of the project provided by ExecutiveSynthesizer and the summary of each student provided by StudentSynthesizer.
+        * @return String, a list with the summary of the duration of the project provided by ExecutiveSynthesizer and the summary of each student provided by StudentSynthesizer. 
         **/
         public String summarize(){
 
         }
 
+Diagrama de secuencia:
+
+![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/summarize()%20Diagrama%20de%20secuencia.png)
 
 
 ## III. Extiendiendo
