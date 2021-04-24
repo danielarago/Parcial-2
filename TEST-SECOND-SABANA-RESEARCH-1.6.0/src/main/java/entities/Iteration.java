@@ -36,4 +36,8 @@ public class Iteration {
         return duration;
     }
 
+    public int countOpenActivities(){
+        return (int) this.activities.stream().map(a -> a.isActive()).filter(b -> !b).count();
+    }
+
 }

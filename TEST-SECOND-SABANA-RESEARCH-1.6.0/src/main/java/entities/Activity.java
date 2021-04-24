@@ -29,13 +29,13 @@ public abstract class Activity {
      * @return true if the activity is in state pending or active, otherwise return false.
      */
     public boolean isActive() {
-        return false;
+        return this.state.equals(PENDING_STATE) || this.state.equals(ACTIVE_STATE);
     }
 
     /**
      * Get the duration of the activity.
      *
-     * @return
+     * @return Duration
      */
     public abstract Duration getDuration() throws SabanaResearchException;
 
