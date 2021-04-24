@@ -1,5 +1,6 @@
 import entities.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -58,6 +59,15 @@ public class SabanaResearchTest {
         assertEquals(sabanaResearch.countOfSummaries(), 0, "The default count of summaries");
     }
 
+    @AfterEach
+    public void takeDown(){
+        groups.clear();
+        projects.clear();
+        iterations.clear();
+        sabanaResearch = null;
+    }
+
+
     @Test
     @DisplayName("GIVEN sabana research WHEN create summary THEN a new summary is created")
     public void shouldCreateSummary() {
@@ -65,8 +75,8 @@ public class SabanaResearchTest {
 
         assertNotNull(summary, "The summary should be created.");
         assertNotNull(summary.getDate(), "Validate summary date.");
-        assertEquals(summary.getActiveProjects(), 1, "Validate number of active projects");
-        assertEquals(sabanaResearch.countOfSummaries(), 1, "The default count of summaries");
+        assertEquals(1, summary.getActiveProjects(), "Validate number of active projects");
+        assertEquals(1, sabanaResearch.countOfSummaries(), "The default count of summaries");
     }
 
     @Test
