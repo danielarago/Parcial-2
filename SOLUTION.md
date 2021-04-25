@@ -163,9 +163,34 @@ La sobre-escritura de métodos es lo que sucede cuando en una clase se hereda un
 
 Para evitar que se sobre-escriba un método este tendría que ser final, de esta manera el método está definido para todas las subclases de la misma manera.
 
+# V. Bono
+Se implementó el bono de los sintetizadores.
+
 # Solución parcial corte 1
 
-## Conceptos
+## I. Diagrama de memoria
+
+![Diagrama de memoria](https://github.com/danielarago/Parcial-1/blob/master/Diagrama%20de%20memoria.png)
+
+El diagrama de memoria también se encuentra en los archivos.
+
+## II. Código
+
+Diagrama de clases actualizado, también se encuentra en los archivos.
+
+![Diagrama de clases](https://github.com/danielarago/Parcial-1/blob/master/Diagrama%20de%20clases%20modificado.png)
+
+## III. Diseño
+
+Diagrama de secuencia del diseño
+
+![Diagrama de secuencia diseño](https://github.com/danielarago/Parcial-1/blob/master/Dise%C3%B1o%20Parcial.png)
+
+Corrección del diseño según lo visto en clase. Se vuelve más fácil el proceso, buscando tanto al estudiante como al grupo dentro de SabanaResearch y después entrando a registrar al estudiante. 
+
+![Diagrama de secuencia corregido](https://github.com/danielarago/Parcial-1/blob/master/Dise%C3%B1o%20Parcial%20corregido.png)
+
+## IV. Conceptos
 
 * ¿Qué es encapsulamiento? ¿Qué ventajas ofrece?
 
@@ -175,24 +200,10 @@ Para evitar que se sobre-escriba un método este tendría que ser final, de esta
 
     * Al igual que el encapsulamiento es una práctica del paradigma de programación orientada a objetos que protege integridad de datos. Hace que se pueda modificar el acceso del código de una clase por fuera de ella, para que algunas cosas sean privadas y solo sean asequibles dentro de la clase misma y otras públicas. Generalmente, los métodos son de acceso libre y los atributos de acceso privado, aunque hay unas pocas excepciones. Esto se debe a varias razones, en primer lugar no es necesario que el código cliente vea los atributos de un objeto o sus datos, sino que vea sus servicios. En segundo lugar, al restringir el acceso a los datos se puede enforzar una lógica de negocio para ellos. Si fueran de libre acceso otras clases podrían llegar a introducir datos en ciertos atributos que no tengan sentido en el contexto. Pero si el atributo es privado y solo se puede modificar con un método set entonces le objeto tiene control y puede mantener lógica. En Java se implementan con los modificadores de acceso public y private que se declaran al principio de los métodos y los atributos.
 
-## Diagrama de memoria
+## V. Bono
 
-![Diagrama de memoria](https://github.com/danielarago/Parcial-1/blob/master/Diagrama%20de%20memoria.png)
+Diagrama de secuencia para la nueva funcionalidad:
 
-El diagrama de memoria también se encuentra en los archivos.
+![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/countInactiveProjects()%20Diagrama%20de%20secuencia.png)
 
-## Código
-
-Diagrama de clases actualizado, también se encuentra en los archivos.
-
-![Diagrama de clases](https://github.com/danielarago/Parcial-1/blob/master/Diagrama%20de%20clases%20modificado.png)
-
-## Diseño
-
-Diagrama de secuencia del diseño
-
-![Diagrama de secuencia diseño](https://github.com/danielarago/Parcial-1/blob/master/Dise%C3%B1o%20Parcial.png)
-
-Corrección del diseño según lo visto en clase. Se vuelve más fácil el proceso, buscando tanto al estudiante como al grupo dentro de SabanaResearch y después entrando a registrar al estudiante. 
-
-![Diagrama de secuencia corregido](https://github.com/danielarago/Parcial-1/blob/master/Dise%C3%B1o%20Parcial%20corregido.png)
+Se implementa la funcionalidad de contar las actividades, las iteraciones, proyectos y finalmente grupos inactivos. Además, se incluyo una línea en los tests existentes de SabanaResearchTest que probara el método de contar projectos inactivos, y por lo tanto todos los que se llaman por dentro.
