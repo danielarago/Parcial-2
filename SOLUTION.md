@@ -29,7 +29,6 @@ Diagrama de clases actualizado:
 ![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/SabanaResearch.png)
 
 Especificación métodos adicionales identificados:
-    ```
 
         /**
         * Gets the summary of the project through ExecutiveSynthesizer.
@@ -56,7 +55,7 @@ Especificación métodos adicionales identificados:
         * @return String, name and duration in project of student
         **/
         public String getStudentSummary(){
-            s
+            
         }
 
         /**
@@ -68,6 +67,42 @@ Especificación métodos adicionales identificados:
             
         }
     
+# Corrección
+
+Nueva especificación propuesta para summarize en `Project`:
+
+        /**
+        * Gets a summary of a project through a synthesizer
+        *
+        * @return String with summary
+        **/
+        public String summarize(){
+
+        }
+
+Diagrama de secuencia para summarize en `StudentSynthesizer`:
+
+![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/summarize()%20StudentSynthesizer%20Diagrama%20de%20secuencia.png)
+
+Diagrama de secuencia para summarize en `ExecutiveSynthesizer`:
+
+![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/summarize()%20ExecutiveSynthesizer%20Diagrama%20de%20secuencia.png)
+
+Nuevo diagrama de clases completado:
+
+
+
+Nuevas especificaciones de métodos adicionales:
+
+        /**
+        * Gets the total duration of all of a student's assigned activities
+        *
+        * @return Duration of a Student's assigned activities
+        **/
+        public Duration getActivitiesDuration(){
+
+        }
+
 
 ## III. Extiendiendo
 
@@ -78,6 +113,8 @@ Cambios propuestos al diagrama de clases general:
 En cuanto a los diseños propuestos en partes anteriores quizás se debería generar un nuevo tipo de error al sacar la duración que se lanze si las dependencias de una actividad no hay terminado y la actividad no ha podido empezar. Además tendría que existir una manera de validar si la duración de una dependencia ha terminado para poder implementar esa funcionalidad.
 
 En cuanto a los métodos en sí realmente no tendrían que cambiar mucho. El diseño no era malo para las condiciones que existían, sin embargo si debería tener algo de flexibilidad en caso de que surjan nuevas condiciones. La gran ventaja fue que ya se habían implementado excepciones, entonces con unas adiciones a la clase customizada de excepciones hay maneras de manejar nuevas excepciones en la lógica del negocio. 
+
+# Corrección
 
 
 ## IV. Conceptos
