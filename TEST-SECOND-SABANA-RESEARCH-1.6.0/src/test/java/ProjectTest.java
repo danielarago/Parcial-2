@@ -22,6 +22,8 @@ public class ProjectTest {
     private Project badFormedProject4; // Project where a documented activity hasn't questions
     private Project badFormedProject5; // Project where a documented activity hasn't normal activity
     private Project badFormedProject6; // Project where a documented activity with normal activity hasn't steps
+    private Project ExecutiveSynthesizerProject; //Project using an ExecutiveSynthesizer
+    private Project StudentSynthesizerProject; //Project using a StudentSynthesizer
 
     public ProjectTest() {
 
