@@ -92,7 +92,7 @@ Nuevo diagrama de clases completado:
 
 ![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/Diagrama%20de%20clases%20SabanaResearch.png)
 
-Nuevas especificaciones de métodos adicionales:
+Nuevas especificaciones de métodos adicionales. En `Student`:
 
         /**
         * Gets the total duration of all of a student's assigned activities
@@ -102,6 +102,16 @@ Nuevas especificaciones de métodos adicionales:
         public Duration getActivitiesDuration(){
 
         }
+
+En `ISynthesizer`:
+
+        /**
+        * Begins the process of a synthesizer
+        *
+        * @param List of the type of Object the synthesizer has to summarize
+        * @return String with the characteristics specific to each type of synthesizer
+        **/
+        public abstract String synthesize(List<Object>);
 
 
 ## III. Extiendiendo
