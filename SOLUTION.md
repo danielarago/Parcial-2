@@ -207,3 +207,7 @@ Diagrama de secuencia para la nueva funcionalidad:
 ![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/countInactiveProjects()%20Diagrama%20de%20secuencia.png)
 
 Se implementa la funcionalidad de contar las actividades, las iteraciones, proyectos y finalmente grupos inactivos. Además, se incluyo una línea en los tests existentes de SabanaResearchTest que probara el método de contar projectos inactivos, y por lo tanto todos los que se llaman por dentro.
+
+Screenshot de pruebas funcionando:
+
+![image](https://user-images.githubusercontent.com/78309222/116009745-e6e5a880-a5e0-11eb-87bc-36f228eb14e9.png)
