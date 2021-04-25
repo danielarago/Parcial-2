@@ -15,12 +15,21 @@ public class Group {
         this.projects = new ArrayList<>();
     }
 
+    public Group(List<Student> members, Student leader) {
+        this.members = members;
+        this.leader = leader;
+    }
+
     public int countActiveProjects(){
         return (int) this.projects.stream().map(p -> p.isActive()).filter(b->b).count();
     }
 
     public void addProject(Project plan) {
         this.projects.add(plan);
+    }
+
+    public void addStudent(Student student){
+        this.members.add(student);
     }
 
     public List<Student> getTotalStudents(){

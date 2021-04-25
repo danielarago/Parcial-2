@@ -24,6 +24,17 @@ public class Project {
         group.addProject(this);
     }
 
+    public Project(ISynthesizer synthesizer, List<Iteration> iterations) {
+        this.synthesizer = synthesizer;
+        this.iterations = iterations;
+    }
+
+    public Project(Group group, ISynthesizer synthesizer) {
+        this.group = group;
+        this.iterations = new ArrayList<>();
+        this.synthesizer = synthesizer;
+    }
+
     public void addIteration(Iteration iteration) {
         this.iterations.add(iteration);
     }
@@ -69,5 +80,13 @@ public class Project {
 
     public String summarize(List<Object> objects) throws SabanaResearchException {
         return synthesizer.synthesize(objects);
+    }
+
+    public List<Iteration> getIterations() {
+        return iterations;
+    }
+
+    public Group getGroup() {
+        return group;
     }
 }

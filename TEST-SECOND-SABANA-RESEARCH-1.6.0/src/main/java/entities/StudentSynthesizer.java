@@ -6,16 +6,16 @@ public class StudentSynthesizer implements ISynthesizer{
 
     @Override
     public String synthesize(List<Object> objects) throws SabanaResearchException {
-        String summary = null;
+        StringBuilder summary = new StringBuilder();
 
         for (Object o: objects){
             if (o instanceof Student){
                 Student s = ((Student)o);
-                summary = (s.getActivitiesDurations() + s.getName()).concat(summary);
+                summary.insert(0, ("Duration = " + s.getActivitiesDurations().toString() + ", name = " + s.getName() + ". "));
             }
         }
 
-        return summary;
+        return summary.toString();
     }
 
 }

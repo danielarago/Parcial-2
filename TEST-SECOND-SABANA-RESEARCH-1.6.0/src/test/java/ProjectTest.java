@@ -40,6 +40,9 @@ public class ProjectTest {
         setupBadFormedProject4();
         setupBadFormedProject5();
         setupBadFormedProject6();
+        setUpExecutiveSynthesizerProject();
+        setUpStudentSynthesizerProject();
+
     }
 
     @Test
@@ -100,6 +103,44 @@ public class ProjectTest {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject6.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY, exception.getMessage());
+    }
+
+    @Test
+    @DisplayName("GIVEN an executive synthesizer WHEN asked to summarize THEN get a complete summary of goal's and duration's of its iterations")
+    public void shouldGetExecutiveSummary() {
+        String actualSummary = null;
+
+        try {
+            List<Object> iterations = new ArrayList<>(ExecutiveSynthesizerProject.getIterations());
+            actualSummary = ExecutiveSynthesizerProject.summarize(iterations);
+        }
+        catch (SabanaResearchException e) {
+            fail(e.getMessage());
+        }
+
+        String expectedSummary = "Duration = PT24H, goal = Research literature. Duration = PT24H, goal = Book club. ";
+
+        assertEquals(expectedSummary, actualSummary);
+    }
+
+    @Test
+    @DisplayName("GIVEN a student synthesizer WHEN asked to summarize THEN get a complete summary of name's and duration's of its students")
+    public void shouldGetStudentSummary() {
+        String actualSummary = "";
+
+        Group group = StudentSynthesizerProject.getGroup();
+
+        try {
+            List<Object> students = new ArrayList<>(group.getTotalStudents());
+            actualSummary = StudentSynthesizerProject.summarize(students);
+        }
+        catch (SabanaResearchException e) {
+            fail(e.getMessage());
+        }
+
+        String expectedSummary = "Duration = PT120H, name = Maya Angelou. Duration = PT48H, name = Robert Frost. ";
+
+        assertEquals(expectedSummary, actualSummary);
     }
 
     private void setupWellFormedProject() {
@@ -231,7 +272,57 @@ public class ProjectTest {
     }
 
     private void setUpExecutiveSynthesizerProject() {
-        Group group = new Group(faker.team().name());
 
+        //Create a few iterations
+        Iteration iteration1 = new Iteration("Research literature");
+        Iteration iteration2 = new Iteration("Book club");
+
+        //Create activities for the iterations
+        NormalActivity normalActivity1 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration1);
+        normalActivity1.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        NormalActivity normalActivity2 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration2);
+        normalActivity2.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+
+        //Add iterations to project
+        List<Iteration> iterations = new ArrayList<>();
+        iterations.add(iteration1);
+        iterations.add(iteration2);
+        ExecutiveSynthesizer executiveSynthesizer = new ExecutiveSynthesizer();
+        ExecutiveSynthesizerProject = new Project(executiveSynthesizer, iterations);
+
+    }
+
+    private void setUpStudentSynthesizerProject(){
+        //Create students
+        Student student1 = new Student("Robert Frost");
+        Student student2 = new Student("Maya Angelou");
+
+        //Put students in group
+        List<Student> members = new ArrayList<>();
+        members.add(student1);
+        Group group = new Group(members, student2);
+
+        StudentSynthesizer studentSynthesizer = new StudentSynthesizer();
+        StudentSynthesizerProject = new Project(group, studentSynthesizer);
+
+        //Create a few iterations
+        Iteration iteration1 = new Iteration("Research literature", ExecutiveSynthesizerProject);
+        Iteration iteration2 = new Iteration("Book club", ExecutiveSynthesizerProject);
+
+        //Create activities for the iterations
+        NormalActivity normalActivity1 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration1);
+        normalActivity1.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        NormalActivity normalActivity2 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration2);
+        normalActivity2.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        NormalActivity normalActivity3 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration1);
+        normalActivity3.addStep(new Step(faker.team().name(), Duration.ofDays(2)));
+        NormalActivity normalActivity4 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration2);
+        normalActivity4.addStep(new Step(faker.team().name(), Duration.ofDays(3)));
+
+        //Give activities to students
+        student1.addAssignedActivity(normalActivity1);
+        student1.addAssignedActivity(normalActivity2);
+        student2.addAssignedActivity(normalActivity3);
+        student2.addAssignedActivity(normalActivity4);
     }
 }

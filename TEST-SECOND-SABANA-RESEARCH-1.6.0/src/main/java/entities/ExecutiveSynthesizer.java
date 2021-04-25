@@ -7,15 +7,15 @@ public class ExecutiveSynthesizer implements ISynthesizer{
 
     @Override
     public String synthesize(List<Object> objects) throws SabanaResearchException {
-        String summary = null;
+        StringBuilder summary = new StringBuilder();
 
         for (Object o: objects){
             if (o instanceof Iteration){
                 Iteration i = ((Iteration)o);
-                summary = (i.getDuration().toString() + i.getGoal()).concat(summary);
+                summary.insert(0, ("Duration = " + i.getDuration().toString() + ", goal = " + i.getGoal() + ". "));
             }
         }
 
-        return summary;
+        return summary.toString();
     }
 }

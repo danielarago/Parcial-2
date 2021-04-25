@@ -13,6 +13,8 @@ public class DocumentedActivity extends Activity {
         super(name, state, iteration);
         this.activity = activity;
         this.questions = new ArrayList<>();
+
+        iteration.addActivity(this);
     }
 
     public void addQuestion(Question question) {

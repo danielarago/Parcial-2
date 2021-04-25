@@ -18,6 +18,11 @@ public class Iteration {
         project.addIteration(this);
     }
 
+    public Iteration(String goal) {
+        this.goal = goal;
+        this.activities = new ArrayList<>();
+    }
+
     public void addActivity(Activity activity) {
         this.activities.add(activity);
     }
