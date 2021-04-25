@@ -40,4 +40,7 @@ public class Iteration {
         return (int) this.activities.stream().map(a -> a.isActive()).filter(b -> !b).count();
     }
 
+    public String getGoal() {
+        return goal;
+    }
 }

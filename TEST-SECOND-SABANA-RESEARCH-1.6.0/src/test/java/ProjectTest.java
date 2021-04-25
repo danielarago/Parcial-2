@@ -229,4 +229,9 @@ public class ProjectTest {
         DocumentedActivity documentedActivity2 = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity2);
         documentedActivity2.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
     }
+
+    private void setUpExecutiveSynthesizerProject() {
+        Group group = new Group(faker.team().name());
+        
+    }
 }

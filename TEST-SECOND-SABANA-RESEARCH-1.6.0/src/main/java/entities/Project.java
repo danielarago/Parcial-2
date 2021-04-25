@@ -66,4 +66,8 @@ public class Project {
 
         return result;
     }
+
+    public String summarize(List<Object> objects) throws SabanaResearchException {
+        return synthesizer.synthesize(objects);
+    }
 }
