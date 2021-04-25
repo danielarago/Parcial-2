@@ -13,6 +13,10 @@ public class NormalActivity extends Activity {
         this.steps = new ArrayList<>();
     }
 
+    public NormalActivity() {
+        this.steps = new ArrayList<>();
+    }
+
     public void addStep(Step step) {
         this.steps.add(step);
     }

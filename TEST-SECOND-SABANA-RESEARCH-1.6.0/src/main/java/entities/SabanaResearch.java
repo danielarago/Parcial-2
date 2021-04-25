@@ -37,4 +37,8 @@ public class SabanaResearch {
 
         return summary;
     }
+
+    public int countInactiveProjects(){
+        return this.groups.stream().map(g -> g.countInactiveProjects()).reduce(0, (a,b)->a+b);
+    }
 }

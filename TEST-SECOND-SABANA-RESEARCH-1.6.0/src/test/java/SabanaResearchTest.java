@@ -76,6 +76,7 @@ public class SabanaResearchTest {
         assertNotNull(summary, "The summary should be created.");
         assertNotNull(summary.getDate(), "Validate summary date.");
         assertEquals(2, summary.getActiveProjects(), "Validate number of active projects");
+        assertEquals(1, sabanaResearch.countInactiveProjects(), "Validate number of inactive projects");
         assertEquals(1, sabanaResearch.countOfSummaries(), "The default count of summaries");
     }
 
@@ -90,5 +91,4 @@ public class SabanaResearchTest {
         assertEquals(summary.getActiveProjects(), 2, "Validate number of active projects");
         assertEquals(sabanaResearch.countOfSummaries(), 1, "The default count of summaries");
     }
-
 }

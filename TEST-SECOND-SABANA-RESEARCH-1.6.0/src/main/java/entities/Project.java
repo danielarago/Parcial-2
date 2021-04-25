@@ -65,6 +65,10 @@ public class Project {
         return this.iterations.stream().map(i -> i.countOpenActivities()).reduce(0, (a, b) -> a+b);
     }
 
+    public int countClosedActivities() {
+        return this.iterations.stream().map(i -> i.countClosedActivities()).reduce(0, (a, b) -> a+b);
+    }
+
     public boolean isActive() {
         boolean result;
 
@@ -73,6 +77,19 @@ public class Project {
         } else {
             int openActivities = this.countOpenActivities();
             result = openActivities > 0;
+        }
+
+        return result;
+    }
+
+    public boolean isInactive() {
+        boolean result;
+
+        if (LocalDate.now().isBefore(this.dateEnd)){
+            result = false;
+        } else {
+            int closedActivities = this.countClosedActivities();
+            result = closedActivities > 0;
         }
 
         return result;

@@ -24,12 +24,12 @@ public class Group {
         return (int) this.projects.stream().map(p -> p.isActive()).filter(b->b).count();
     }
 
-    public void addProject(Project plan) {
-        this.projects.add(plan);
+    public int countInactiveProjects(){
+        return (int) this.projects.stream().map(p -> p.isInactive()).filter(b->b).count();
     }
 
-    public void addStudent(Student student){
-        this.members.add(student);
+    public void addProject(Project plan) {
+        this.projects.add(plan);
     }
 
     public List<Student> getTotalStudents(){

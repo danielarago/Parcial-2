@@ -18,9 +18,9 @@ public class Iteration {
         project.addIteration(this);
     }
 
-    public Iteration(String goal) {
+    public Iteration(String goal, List<Activity> activities) {
         this.goal = goal;
-        this.activities = new ArrayList<>();
+        this.activities = activities;
     }
 
     public void addActivity(Activity activity) {
@@ -43,6 +43,10 @@ public class Iteration {
 
     public int countOpenActivities(){
         return (int) this.activities.stream().map(a -> a.isActive()).filter(b -> !b).count();
+    }
+
+    public int countClosedActivities(){
+        return (int) this.activities.stream().map(a -> a.isNotActive()).filter(b -> !b).count();
     }
 
     public String getGoal() {

@@ -118,7 +118,7 @@ public class ProjectTest {
             fail(e.getMessage());
         }
 
-        String expectedSummary = "Duration = PT24H, goal = Research literature. Duration = PT24H, goal = Book club. ";
+        String expectedSummary = "Duration = PT72H, goal = Research literature. Duration = PT120H, goal = Book club. ";
 
         assertEquals(expectedSummary, actualSummary);
     }
@@ -273,15 +273,25 @@ public class ProjectTest {
 
     private void setUpExecutiveSynthesizerProject() {
 
-        //Create a few iterations
-        Iteration iteration1 = new Iteration("Research literature");
-        Iteration iteration2 = new Iteration("Book club");
-
         //Create activities for the iterations
-        NormalActivity normalActivity1 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration1);
-        normalActivity1.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
-        NormalActivity normalActivity2 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration2);
+        NormalActivity normalActivity1 = new NormalActivity();
+        normalActivity1.addStep(new Step(faker.team().name(), Duration.ofDays(2)));
+        NormalActivity normalActivity2 = new NormalActivity();
         normalActivity2.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        NormalActivity normalActivity3 = new NormalActivity();
+        normalActivity3.addStep(new Step(faker.team().name(), Duration.ofDays(2)));
+        NormalActivity normalActivity4 = new NormalActivity();
+        normalActivity4.addStep(new Step(faker.team().name(), Duration.ofDays(3)));
+        List<Activity> activities1 = new ArrayList<>();
+        List<Activity> activities2 = new ArrayList<>();
+        activities1.add(normalActivity1);
+        activities1.add(normalActivity2);
+        activities2.add(normalActivity3);
+        activities2.add(normalActivity4);
+
+        //Create a few iterations
+        Iteration iteration1 = new Iteration("Research literature", activities1);
+        Iteration iteration2 = new Iteration("Book club", activities2);
 
         //Add iterations to project
         List<Iteration> iterations = new ArrayList<>();

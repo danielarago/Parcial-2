@@ -13,6 +13,9 @@ public abstract class Activity {
     private String state;
     private Iteration iteration;
 
+    public Activity() {
+    }
+
     public Activity(String name, String state, Iteration iteration) {
         this.name = name;
         this.state = state;
@@ -30,6 +33,15 @@ public abstract class Activity {
      */
     public boolean isActive() {
         return this.state.equals(PENDING_STATE) || this.state.equals(ACTIVE_STATE);
+    }
+
+    /**
+     * Evaluate if an activity is inactive or closed.
+     *
+     * @return
+     */
+    public boolean isNotActive() {
+        return this.state.equals(CANCELED_STATE) || this.state.equals(CLOSED_STATE);
     }
 
     /**
