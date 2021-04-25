@@ -232,6 +232,6 @@ public class ProjectTest {
 
     private void setUpExecutiveSynthesizerProject() {
         Group group = new Group(faker.team().name());
-        
+
     }
 }
