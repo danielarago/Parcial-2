@@ -90,7 +90,7 @@ Diagrama de secuencia para summarize en `ExecutiveSynthesizer`:
 
 Nuevo diagrama de clases completado:
 
-
+![image](https://github.com/danielarago/Parcial-2/blob/master/TEST-SECOND-SABANA-RESEARCH-1.6.0/diagrams/Diagrama%20de%20clases%20SabanaResearch.png)
 
 Nuevas especificaciones de métodos adicionales:
 
@@ -116,6 +116,11 @@ En cuanto a los métodos en sí realmente no tendrían que cambiar mucho. El dis
 
 # Corrección
 
+Cambios nuevos propuestos al diagrama de clases general:
+
+Los nuevos diseños requieren que el método de getDuration de una actividad cambie para incluir la duración de sus dependencias. Además tendría que considerarse la condición de que una dependencia haya terminado para que una actividad se considere como activa.
+
+El diseño requería algo de flexibilidad ya que sin haber integrado el código del parcial anterior, no existía manera de determinar si una actividad estaba activa y tocaría generar algún método para implementar la nueva lógica en cuanto a la necesidad de las dependencias de estar terminadas para poder comenzar una actividad y tenerla activa. 
 
 ## IV. Conceptos
 
