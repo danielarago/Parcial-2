@@ -217,3 +217,7 @@ Se implementa la funcionalidad de contar las actividades, las iteraciones, proye
 Screenshot de pruebas funcionando:
 
 ![image](https://user-images.githubusercontent.com/78309222/116009745-e6e5a880-a5e0-11eb-87bc-36f228eb14e9.png)
+
+## Configuración SonarQube
+
+Se puede ver en el código que se intentó realizar el análisis en SonarQube, sin embargo, nunca conectó con el proyecto creado. Se deja evidencia de hasta donde se realizó el proceso ya que aunque se siguen todas las instrucciones dadas, no funcionó.
