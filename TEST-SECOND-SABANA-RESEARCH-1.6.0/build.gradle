@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'jacoco'
+    id 'org.sonarqube' version '3.1.1'
 }
 
 group 'sabana.poob'
@@ -22,5 +24,11 @@ test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
+    }
+}
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', ''
     }
 }

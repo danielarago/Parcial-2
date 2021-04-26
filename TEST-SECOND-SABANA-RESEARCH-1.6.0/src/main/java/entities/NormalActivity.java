@@ -24,7 +24,7 @@ public class NormalActivity extends Activity {
     @Override
     public Duration getDuration() throws SabanaResearchException {
 
-        if (steps.size()==0)
+        if (steps.isEmpty())
             throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY);
 
         Duration duration = Duration.ZERO;

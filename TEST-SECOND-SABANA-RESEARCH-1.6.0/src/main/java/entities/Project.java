@@ -49,7 +49,7 @@ public class Project {
 
     public Duration getDuration() throws SabanaResearchException {
 
-        if (iterations.size() == 0)
+        if (iterations.isEmpty())
                 throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);
 
         Duration duration = Duration.ZERO;

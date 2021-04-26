@@ -1,5 +1,6 @@
 import com.github.javafaker.Faker;
 import entities.*;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -45,13 +46,26 @@ public class ProjectTest {
 
     }
 
+    @AfterEach
+    public void takeDown(){
+        wellFormedProject = null;
+        badFormedProject1 = null;
+        badFormedProject2 = null;
+        badFormedProject3 = null;
+        badFormedProject4 = null;
+        badFormedProject5 = null;
+        badFormedProject6 = null;
+        ExecutiveSynthesizerProject = null;
+        StudentSynthesizerProject = null;
+    }
+
     @Test
     @DisplayName("GIVEN a well formed project WHEN get duration THEN return the project duration")
     public void shouldGetDurationWhenWellFormedProject() {
 
         try {
             Duration duration = wellFormedProject.getDuration();
-            assertEquals(3, duration.toDays());
+            assertEquals(5, duration.toDays());
         } catch (SabanaResearchException e) {
             fail(e.getMessage());
         }
@@ -118,7 +132,7 @@ public class ProjectTest {
             fail(e.getMessage());
         }
 
-        String expectedSummary = "Duration = PT72H, goal = Research literature. Duration = PT120H, goal = Book club. ";
+        String expectedSummary = "Duration = PT96H, goal = Book club. Duration = PT72H, goal = Research literature. ";
 
         assertEquals(expectedSummary, actualSummary);
     }
@@ -281,7 +295,7 @@ public class ProjectTest {
         NormalActivity normalActivity3 = new NormalActivity();
         normalActivity3.addStep(new Step(faker.team().name(), Duration.ofDays(2)));
         NormalActivity normalActivity4 = new NormalActivity();
-        normalActivity4.addStep(new Step(faker.team().name(), Duration.ofDays(3)));
+        normalActivity4.addStep(new Step(faker.team().name(), Duration.ofDays(2)));
         List<Activity> activities1 = new ArrayList<>();
         List<Activity> activities2 = new ArrayList<>();
         activities1.add(normalActivity1);
@@ -316,8 +330,8 @@ public class ProjectTest {
         StudentSynthesizerProject = new Project(group, studentSynthesizer);
 
         //Create a few iterations
-        Iteration iteration1 = new Iteration("Research literature", ExecutiveSynthesizerProject);
-        Iteration iteration2 = new Iteration("Book club", ExecutiveSynthesizerProject);
+        Iteration iteration1 = new Iteration("Research literature", StudentSynthesizerProject);
+        Iteration iteration2 = new Iteration("Book club", StudentSynthesizerProject);
 
         //Create activities for the iterations
         NormalActivity normalActivity1 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration1);

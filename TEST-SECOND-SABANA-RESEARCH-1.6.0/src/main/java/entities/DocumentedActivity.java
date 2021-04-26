@@ -24,7 +24,7 @@ public class DocumentedActivity extends Activity {
     @Override
     public Duration getDuration() throws SabanaResearchException {
 
-        if (questions.size()==0)
+        if (questions.isEmpty())
             throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY);
 
         if (activity == null)
