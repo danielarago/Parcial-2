@@ -220,4 +220,9 @@ Screenshot de pruebas funcionando:
 
 ## Configuración SonarQube
 
-Se puede ver en el código que se intentó realizar el análisis en SonarQube, sin embargo, nunca conectó con el proyecto creado. Se deja evidencia de hasta donde se realizó el proceso ya que aunque se siguen todas las instrucciones dadas, no funcionó.
+Se puede ver en el build y en los settings del proyecto que intenté realizar el análisis en SonarQube, sin embargo, nunca conectó con el proyecto creado. Se deja evidencia de hasta donde se realizó el proceso ya que llegue hasta la última etapa y aunque seguí las instrucciones dadas en el proyecto, nunca me conectó.
+
+![image](https://user-images.githubusercontent.com/78309222/116029878-e28cb000-a61f-11eb-93eb-3a785d8ac48f.png)
+
+![image](https://user-images.githubusercontent.com/78309222/116029921-ffc17e80-a61f-11eb-860b-bdb363bf0da1.png)
+
