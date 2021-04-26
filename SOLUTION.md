@@ -164,7 +164,13 @@ La sobre-escritura de métodos es lo que sucede cuando en una clase se hereda un
 Para evitar que se sobre-escriba un método este tendría que ser final, de esta manera el método está definido para todas las subclases de la misma manera.
 
 # V. Bono
+
 Se implementó el bono de los sintetizadores.
+
+Screenshots de nuevas pruebas:
+
+![image](https://user-images.githubusercontent.com/78309222/116013966-83677500-a5f8-11eb-82e0-03b144f10dcc.png)
+
 
 # Solución parcial corte 1
 
